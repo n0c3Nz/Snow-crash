@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Al introducirme en este usuario encuentro en su home
+# un fichero .pcap que se que es una captura de red asi
+# que utilizo wireshark para analizar el tráfico, tras
+# revisar la data veo que lo que se acontece es un
+# intento de login entre srv/client con el usuario:
+# levelX
+# contraseña:
+# ft_wandrNDRelL0L
+#
+# Así que no hago más que comprobar si es la correcta y
+# efectivamente.
+#
+#
+# Para seguir la conversación en claro usar:
+#
+# CTRL + ALT + SHIFT + T
