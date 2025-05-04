@@ -1,0 +1,8 @@
+Checks
+
+- Procesos: ps aux
+- Puertos abiertos: ss -tulpn
+- Monitorización de procesos en ejecución: pspy
+- 
+- /etc/apache2
+- /etc/php5
