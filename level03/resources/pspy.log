@@ -1,0 +1,3 @@
+2025/05/03 04:28:41 CMD: UID=3003  PID=7682   | echo Exploit me
+2025/05/03 04:28:41 CMD: UID=3003  PID=7681   | sh -c /usr/bin/env echo Exploit me
+2025/05/03 04:28:41 CMD: UID=3003  PID=7680   | ./level03

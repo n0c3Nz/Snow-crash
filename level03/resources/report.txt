@@ -1,0 +1,17 @@
+En este nivel veo un binario con permisos SUID,
+es decir, al ser ejecutado se hace siempre en nombre
+de su creador, eso nos da juego ya que al hacerlo
+me muestra el mensaje "Exploit me", asique lo que he
+hecho ha sido cargar la tool pspy para ver qué hace
+por detrás este binario, puedo apreciar lo siguiente:
+
+2025/05/03 04:28:41 CMD: UID=3003  PID=7682   | echo Exploit me
+2025/05/03 04:28:41 CMD: UID=3003  PID=7681   | sh -c /usr/bin/env echo Exploit me
+2025/05/03 04:28:41 CMD: UID=3003  PID=7680   | ./level03
+
+Entre esto y los strings del binario saco en claro
+que usa la librería system para ejecutar comandos
+en el sistema y que lo hace sin una ruta absoluta
+
+Así que he optado por hacer path hijacking para
+que al ejecutar 'echo' sea mi fichero con 'getflag' dentro.
