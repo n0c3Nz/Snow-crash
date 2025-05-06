@@ -1,0 +1,17 @@
+Accedo al usuario, veo un binario, le paso el strings para ver qué
+puedo intuir que hace, entonces lo que hago como en otros niveles
+es usar pspy para monitorizar los procesos, veo que al ejecutar este
+binario dice mi nombre, en pspy veo:
+
+2025/05/06 16:21:17 CMD: UID=3007  PID=4553   |
+2025/05/06 16:21:17 CMD: UID=3007  PID=4552   | sh -c /bin/echo level07
+2025/05/06 16:21:17 CMD: UID=3007  PID=4551   | ./level07
+
+
+Con esto veo que imprime el nombre de mi usuario utilizando
+posiblemente la variable de entorno $LOGNAME, lo se por que he
+visto referencia a esta en los trings, así que me decido a probar:
+
+export LOGNAME="flag07 && getflag"; ./level07
+
+Y tachán.
