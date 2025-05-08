@@ -28,23 +28,11 @@ directamente no me deja leerlo, lo intuyo por estas 3 líneas:
 token
 You may not access '%s'
 
-Así que tras probar a hacer links simbólicos con otros nombres en /tmp sin éxito me fijo que justo
-encima hay 3 líneas con la siguiente información:
-
-PTRh
-QVhT
-UWVS
-
-¿Será este el nombre del fichero que tengo que crear?, lo intento y efectivamente, creo un fichero /tmp/input
-con el contenido:
-PTRh
-QVhT
-UWVS
-
-y creo el link simbólico de la siguiente manera:
-ln -s ~/token /tmp/"$(cat /tmp/input)"
+Tras probar a hacer un link simbólico a token y ejecutarlo me doy cuenta de que me deja leerlo.
+creo el link simbólico de la siguiente manera:
+ln -s ~/token /tmp/pwned
 Y después lo ejecuto:
-~/level08 /tmp/"$(cat /tmp/input)"
+~/level08 /tmp/pwned
 ¡Y tachán!
 token: quif5eloekouj29ke0vouxean
 

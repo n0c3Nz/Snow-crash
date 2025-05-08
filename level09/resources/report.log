@@ -1,0 +1,14 @@
+./level09 "..rlg\`h"
+output: ./token
+esto me devuelve texto incrementando el valor del carácter n número de veces basado en su posición
+
+./level09 "abcdef"
+output: cdefgh
+
+
+cat token
+output: f4kmm6p|=pnDBDu{
+
+./level09 "$(cat token)"
+output: f5mpq;vE{{TSW
+        f4kmm6p|=pnDBDu{
