@@ -5,10 +5,16 @@ esto me devuelve texto incrementando el valor del carácter n número de veces b
 ./level09 "abcdef"
 output: cdefgh
 
-
+Al hacer cat de token veo
 cat token
 output: f4kmm6p|=pnDBDu{
 
-./level09 "$(cat token)"
-output: f5mpq;vE{{TSW
-        f4kmm6p|=pnDBDu{
+PERO SI LO LEO CON VIM ME DOY CUENTA DE QUE SON CARÁCTERES ASCII MAL INTERPRETADOS, ya que el contenido es:
+
+f4kmm6p|=<82>^?p<82>n<83><82>DB<83>Du{^?<8c><89>
+
+Así que monto un script en C que me traduce los carácteres <Hexadecimales> y los '^?' a su valor ASCII 
+menos la posición del carácter en el string.
+
+Los carácteres Hexadecimales delatan que se incrementa el valor de los carácteres sin comprobar límites,
+por lo que el valor de los carácteres sobrepasa el valor ASCII y este da incluso la vuelta a toda la tabla ASCII.
