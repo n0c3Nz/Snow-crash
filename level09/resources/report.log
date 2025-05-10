@@ -13,6 +13,11 @@ PERO SI LO LEO CON VIM ME DOY CUENTA DE QUE SON CARÁCTERES ASCII MAL INTERPRETA
 
 f4kmm6p|=<82>^?p<82>n<83><82>DB<83>Du{^?<8c><89>
 
+
+se puede comprobar también llevando el output a un fichero y abriéndolo con vim.
+
+./level09 "~~~~~~~~~" 
+
 Así que monto un script en C que me traduce los carácteres <Hexadecimales> y los '^?' a su valor ASCII 
 menos la posición del carácter en el string.
 
