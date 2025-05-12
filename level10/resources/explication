@@ -1,0 +1,44 @@
+
+Tiene un límite máximo de envío de 1041 líneas
+
+En pspy cuando el comando se alarga sí que puedo ver como el binario se ejecuta en nombre de flag10
+
+
+2025/05/10 02:22:55 CMD: UID=2010  PID=6913   | vim a
+2025/05/10 02:23:06 CMD: UID=3010  PID=6914   | /home/user/level10/level10 a 192.168.20.60
+2025/05/10 02:23:58 CMD: UID=2010  PID=6916   | netcat 192.168.20.60 6969
+
+
+check:
+
+- Si argc < 3
+- Si se tiene acceso al fichero en cuestión
+- Si la conexión con el servidor se abre correctamente
+- Si puede escribir el banner
+- Si puede abrir exitosamente el fichero
+- Si puede leer el fichero
+
+Aqui me doy cuenta de que hay una ventana de tiempo entre que se chequea si tengo permiso
+de lectura en el fichero y el hecho de abrirlo y justo coincidencias del destino hoy he visto
+una ponencia de S4ur0n hablando sobre Dirty COW, CVE-2016-5195 en el que hace referencia
+a los fallos que pueden ocasionar las condiciones de carrera trabajando con dos hilos simultaneamente
+sobre un mismo recurso, en el propio cve muestra un poc editando el fichero /etc/passwd
+jugando con la memoria privada de un proceso.
+
+Yo al ver que tenía esto delante caí en que quizá podría crear dos hilos con búcles infinitos:
+Hilo 1:
+- ejecuta ./level10 /tmp/myfile 127.0.0.1
+Hilo 2:
+- Crea un fichero normal /tmp/myfile
+- lo sustituye por un enlace simbólico a token, le da un poco mas de tiempo
+- lo elimina
+
+por otro lado me quedo escuchando con una sesión forzada en netcat:
+
+netcat -lk 6969
+
+esto provoca que en algún momento el binario compruebe si tiene acceso a myfile cuando es un fichero normal
+por lo tanto pasa ese check y justo en ese periodo de tiempo antes de abrir el fichero el otro hilo cambia
+el fichero a un link simbolico que apunta a token
+
+token: woupa2yuojeeaaed06riuj63c

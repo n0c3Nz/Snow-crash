@@ -1,0 +1,49 @@
+level10@SnowCrash:~$ strings level10 | grep -v "_" | grep -v ".h" | grep -v ".c"
+/lib/ld-linux.so.2
+exit
+htons
+puts
+printf
+read
+stdout
+open
+strerror
+write
+UWVS
+.*( )*.
+Sending file ..
+Damn. Unable to open file
+Unable to read from file: %s
+wrote file!
+;*2$"
+GCC: (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+main
+file
+argv
+long long int
+long long unsigned int
+buffer
+GNU C 4.6.3
+host
+stdout
+.symtab
+.strtab
+.interp
+.note.ABI-tag
+.note.gnu.build-id
+.dynsym
+.dynstr
+.gnu.version
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.dtors
+.got
+.got.plt
+.data
+.bss
+completed.6159
+main
