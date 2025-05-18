@@ -7,12 +7,14 @@
 # intento de login entre srv/client con el usuario:
 # levelX
 # contraseña:
-# ft_wandrNDRelL0L
+# ft_wandr...NDREl.L0L
 #
-# Así que no hago más que comprobar si es la correcta y
+# Veo por la información en hexadecimal que los carácteres '.' son 7f -> 127 -> DEL
+# Se representan como '.' al no poder ser interpretados por ascii, quitamos un carácter
+# por punto y queda:
+# ft_waNDRELOL
+# Compruebo si es la correcta y
 # efectivamente.
 #
 #
-# Para seguir la conversación en claro usar:
-#
-# CTRL + ALT + SHIFT + T
+# (Para seguir la conversación en claro en WireShark usar: CTRL + ALT + SHIFT + T )
