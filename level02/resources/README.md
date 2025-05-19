@@ -25,7 +25,7 @@ a los paquetes en cuestión:
 
 <p align="center"><img src="imgs/7Fchar.png"></p>
 
-Vemos que esos puntos en realidad son un valor hexadecimal que corresponde al valor 7f, que en decimal es igual a 127, que en la tabla ASCII es `DEL`, es decir, cada '.' es porque el usuario
+Vemos que esos puntos en realidad son un valor hexadecimal que corresponde al valor 7f, que en decimal es igual a 127, que en la tabla ASCII es `DEL`, es decir, cada '.' es debido a que el usuario
 estaba borrando carácteres en medio de la escritura de la contraseña, por lo que si aplico esa cantidad de borrados la contraseña se me queda en `ft_waNDReLOL`.
 
 Entro en flag02, ejecuto `getflag` y paso al [siguiente nivel](../../level03/resources/README.md).
