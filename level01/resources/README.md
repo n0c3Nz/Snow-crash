@@ -13,3 +13,4 @@ Por lo que llevo este hash a mi sistema local donde trato de romperlo con john:
 ```bash
 john --format=descrypt hash.txt 
 ```
+Efectivamente me da la contraseña de flag01, entro, ejecuto `getflag` y paso al [siguiente nivel](../../level02/resources/README.md).
