@@ -1,4 +1,4 @@
-<h1 align="center">Level 01 Walkthrough:</h1>
+<h1 align="center">Level 01 Walkthrough ~ Cracking a hash:</h1>
 
 De la misma forma que antes me dispongo a buscar ficheros de configuración en el sistema que puedan brindarme algo de información que me lleve a escalar privilegios hacia $\color{Red}{\textsf{flag01}}$.
 Entre todos los ficheros que voy revisando se encuentra `/etc/passwd` donde veo el vector de ataque de este nivel:
