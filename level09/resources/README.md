@@ -17,10 +17,11 @@ en hexadecimal y veo lo siguiente:
 f4kmm6p|=<82>^?p<82>n<83><82>DB<83>Du{^?<8c><89>
 ```
 Esos valores se deben a que como se incrementa el valor de cada carácter basándose en su posición
-estos valores "se salen" de la tabla ASCII, por ejemplo, el carácter hexadecimal <82> en decimal
-equivale a `130`, este valor se debe a que como el carácter se encuentra en la posición 11 del token
-habría que restarle 11 para averiguar el carácter original `(121 -> y)`, se me ocurre montar [un script
-en C](reverse.c) que me haga la operación inversa al token para recuperar la contraseña "desencriptada"
+estos valores "se salen" de la tabla ASCII y por eso no son representados por `cat`, por ejemplo, el 
+carácter hexadecimal <82> en decimal equivale a `130`, este valor se debe a que como el carácter se 
+encuentra en la posición 11 del token habría que restarle 11 para averiguar el carácter original 
+`(121 -> y)`, se me ocurre montar [un script
+en C](reverse.c) que me haga la operación inversa al token para recuperar la contraseña "desencriptada".
 
 Finalmente ejecutando el script me da la contraseña correcta, entro en flag09, ejecuto `getflag` y hasta
 aqui la parte obligatoria, desde aqui damos paso paso a los bonus, vamos al [siguiente nivel](../../level05/resources/README.md).
