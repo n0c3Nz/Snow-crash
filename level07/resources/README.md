@@ -7,4 +7,4 @@ de entorno así que miro en `env` y pruebo lo siguiente:
 ```bash
 LOGNAME="flag07 && getflag" ./level07
 ```
-¡Tachán! y paso al [siguiente nivel](../../level07/resources/README.md).
+¡Tachán! y paso al [siguiente nivel](../../level08/resources/README.md).
