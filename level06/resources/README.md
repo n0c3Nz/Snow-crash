@@ -42,7 +42,9 @@ Por lo que creo un fichero /tmp/test.php donde guardo el siguiente código:
 ```txt
 [x {${system($z)}}]
 ```
-> system es una función de PHP que nos permite ejecutar comándos en el sistema.
+> system es una función de PHP que nos permite ejecutar comándos en el sistema y lo envolvemos
+> en esos{${}} para que lo detecte como declaración de en expresión regular compleja y pase a
+> ser evaluada/ejecutada por `/e`.
 
 y ejecuto:
 
